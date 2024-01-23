@@ -1,4 +1,4 @@
-import { Router, Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { ServerResponse } from 'http';
 
 type HandlerFunction = (req: Request, res: Response, next?: NextFunction) => Promise<any> | ServerResponse | any;

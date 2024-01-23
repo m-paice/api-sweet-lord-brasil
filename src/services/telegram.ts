@@ -1,9 +1,8 @@
 import TelegramBot from 'node-telegram-bot-api';
 
-const token = '6762099622:AAHqg6uXXb3XmjV1Oo3Hpm9SoUvfOuk8poc';
-const bot = new TelegramBot(token, { polling: true });
+import { TELEGRAM_TOKEN, TELEGRAM_USER_ID } from '../constants';
 
-const userId = '6859287388';
+const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 
 interface SendMessageToUserProps {
   name: string;
@@ -13,7 +12,7 @@ interface SendMessageToUserProps {
 
 export function sendMessageToUser({ name, music, artist }: SendMessageToUserProps) {
   return bot.sendMessage(
-    userId,
+    TELEGRAM_USER_ID,
     `
 Nome do Solicitante: ${name ?? 'Não identificado'}
 Nome da Música: ${music ?? 'Não identificado'}
